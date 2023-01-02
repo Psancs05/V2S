@@ -11,10 +11,12 @@ def convert_video_to_audio_moviepy(video_file, output_ext="mp3"):
     """Converts video to audio using MoviePy library that uses `ffmpeg` under the hood"""
     filename, ext = os.path.splitext(video_file)
     clip = VideoFileClip(video_file)
+    # TODO: Manage the output file name
     clip.audio.write_audiofile(f"{filename}.{output_ext}")
 
 
 if __name__ == "__main__":
+    # TODO: Manage the input file ingestion
     file = sys.argv[1]
     
     # Check if file exists
