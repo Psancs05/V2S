@@ -11,6 +11,9 @@ if not os.path.exists(file):
 
 model = whisper.load_model("small")
 
+# TODO: Handle audio language
+# TODO: Model size
+
 print("Transcribing audio file...")
 result = model.transcribe(file)
 
