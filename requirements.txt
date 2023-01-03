@@ -2,3 +2,4 @@ moviepy==1.0.3
 git+https://github.com/openai/whisper.git
 ffmpeg-python==0.2.0
 setuptools-rust
+cohere==3.1.3
