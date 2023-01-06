@@ -12,7 +12,7 @@ def convert_video_to_audio_moviepy(video_file, output_ext="mp3"):
     clip = VideoFileClip(video_file)
     # TODO: Manage the output file name
     file_name = filename + "." + output_ext
-    clip.audio.write_audiofile(file_name)
+    clip.audio.write_audiofile(file_name, verbose=False, logger=None)
     return file_name
     
 def check_video(file):
@@ -25,8 +25,11 @@ def check_video(file):
 
 # --------------------- Main ---------------------
 def audio_conversion(video):
-    """Converts video to audio"""   
+    """Converts video to audio"""
+    print("Converting video to audio...") 
     check_file_exists(video)
     check_video(video)
-    return convert_video_to_audio_moviepy(video)
+    file_name = convert_video_to_audio_moviepy(video)
     #TODO: Once the conversion is done, delete the video file
+    print("Conversion complete")
+    return file_name

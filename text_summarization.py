@@ -11,7 +11,7 @@ def generate_prompt(file):
     """Generates the prompt for the text summarization"""
     with(open(file, 'r')) as f:
         text = f.read()
-    return text + "\n In summary, "
+    return text + "\n In summary,"
 
 def make_prediction(prompt):
     """Makes the prediction using the Cohere API"""
@@ -40,7 +40,10 @@ def process_prediction(prediction):
 # --------------------- Main ---------------------
 def summarization(file):
     """Summarizes the text"""
+    print("Summarizing text...")
     connect_cohere()
     prompt = generate_prompt(file)
     prediction = make_prediction(prompt)
-    print(process_prediction(prediction))
+    summ = process_prediction(prediction)
+    print("Summarization complete")
+    print(summ)

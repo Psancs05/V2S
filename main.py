@@ -9,12 +9,15 @@ if  __name__ == "__main__":
      video = sys.argv[1]
      
      # Convert the video to audio
+     print("--- Converting video to audio ---")
      file = audio_conversion(video)
      
      # Transcribe the audio file
+     print("--- Transcribing audio file ---")
      audio_transcription(file)
      
      # Summarize the text
+     print("--- Summarizing text ---")
      summarization(file)
      
      
