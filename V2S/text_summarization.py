@@ -1,7 +1,6 @@
 import cohere
 import config
 
-
 def connect_cohere():
     """Connect to the Cohere API"""
     global co
