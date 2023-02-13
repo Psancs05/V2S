@@ -1,24 +1,27 @@
 import cohere
 import config
 
+
 def connect_cohere():
     """Connect to the Cohere API"""
     global co
     api_key = config.api_key
     co = cohere.Client(api_key)
-    
+
+
 def generate_prompt(file):
     """Generates the prompt for the text summarization"""
     with(open(file, 'r')) as f:
         text = f.read()
     return text + "\n In summary,"
 
+
 def make_prediction(prompt):
     """Makes the prediction using the Cohere API"""
     return co.generate(
         model='xlarge',
         prompt=prompt,
-        return_likelihoods = 'GENERATION',
+        return_likelihoods='GENERATION',
         stop_sequences=['--'],
         max_tokens=150,
         temperature=0.7,
@@ -26,6 +29,7 @@ def make_prediction(prompt):
         k=0,
         p=0.75,
     )
+
 
 def process_prediction(prediction):
     """Processes the prediction"""
@@ -37,7 +41,9 @@ def process_prediction(prediction):
     prediction = prediction[0].upper() + prediction[1:]
     return "TEXT SUMMARIZATION:\n" + prediction
 
-# --------------------- Main ---------------------
+# --------------------- Main function ---------------------
+
+
 def summarization(file):
     """Summarizes the text"""
     print("Summarizing text...")
