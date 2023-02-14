@@ -18,6 +18,8 @@ if __name__ == "__main__":
     video = args.video_path
     lang = args.lang
 
+    # TODO: Manage platform (Windows or Linux)
+
     # Convert the video to audio
     print("--- Converting video to audio ---")
     file = audio_conversion(video)
