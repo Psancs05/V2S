@@ -7,8 +7,6 @@ def check_file_exists(file):
     if not os.path.exists(file):
         print(f"File {file} does not exist")
         sys.exit(1)
-    else:
-        print(f"File {file} exists")
 
 
 def set_tensorflow_log_level(level):

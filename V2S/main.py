@@ -23,7 +23,6 @@ if __name__ == "__main__":
     # Convert the video to audio
     print("--- Converting video to audio ---")
     file = audio_conversion(video)
-    print("Audio file: " + file)
 
     # Transcribe the audio file
     print("--- Transcribing audio file ---")
